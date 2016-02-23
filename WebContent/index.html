@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Player Database</title>
+
+<!-- STYLE SHEETS -->
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/jquery.dataTables.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="jasmine/lib/jasmine-2.4.0/jasmine_favicon.png" rel="shortcut icon" type="image/png">
+<link href="jasmine/lib/jasmine-2.4.0/jasmine.css" rel="stylesheet" type="text/css">
+
+<!-- JAVA SCRIPTS -->
+
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/backbone-min.js"></script>
+<script src="js/players.js"></script>
+<script src="js/addEditView.js"></script>
+<script src="js/main.js"></script>
+<script src="jasmine/lib/jasmine-2.4.0/jasmine.js" type="text/javascript"></script>
+<script src="jasmine/lib/jasmine-2.4.0/jasmine-html.js" type="text/javascript"></script>
+<script src="jasmine/lib/jasmine-2.4.0/boot.js" type="text/javascript"></script>
+
+<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+
+
+
+</head>
+
+<body>
+	<div class="backgroundColor">
+	<div id="page1">
+		<header>
+			<h1 class="page-header">
+				Player database
+			</h1>
+		</header>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+			<li><a href="#players" role="tab" data-toggle="tab">Players</a></li>
+			<li id="navUsers"><a href="#users" role="tab" data-toggle="tab">Website Users</a></li>
+			<li><a href="#contact" role="tab" data-toggle="tab">Contact</a></li>
+			<li class="dropdown" id="menuLogin">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+            <div class="dropdown-menu" style="padding:17px;">
+              <form class="form" id="formLogin"> 
+                <input name="username" id="username" type="text" placeholder="Username"> 
+                <input name="password" id="password" type="password" placeholder="Password"><br>
+                <button type="button" id="loginButton" class="btn">Login</button>
+              </form>
+            </div>
+          	</li>
+          	<li class="dropdown" id="menuRegister">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navRegister">Sign Up</a>
+            <div class="dropdown-menu" style="padding:17px;">
+              <form class="form" id="formRegister"> 
+                <input name="email" id="emailRegister" type="text" placeholder="Email"> 
+                <input name="password" id="passwordRegister" type="password" placeholder="Password"><br>
+                <input name="password" id="passwordConfirmRegister" type="password" placeholder="Confirm Password"><br>
+                <button type="button" id="registerButton" class="btn">Sign Up</button>
+              </form>
+            </div>
+          	</li>
+          	<li class="dropdown" id="menuLogout">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogout"><div class="emailMessage"></div></a>
+            <div class="dropdown-menu" style="padding:17px;">
+              <form class="form" id="formLogout"> 
+                <button type="button" id="logoutButton" class="btn">Logout</button>
+              </form>
+            </div>
+          	</li>
+          
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="home">
+				<h1 id="urH1">Overview</h1>
+				
+				<div id='urContainer1'>
+ 					
+ 				<p id='urp1'>
+					Counter-Strike: Global Offensive (CS:GO) expands upon the team-based action gameplay that the franchise pioneered when it was launched 12 years ago.
+					CS:GO features new maps, characters, and weapons and delivers updated versions of the classic CS content (de_dust, etc.). In addition, CS:GO introduces new gameplay modes, matchmaking, leader boards, and more.
+					<br />
+				</p>
+				
+				<div id="transfersHeader" class="transfersHeader"><h2>Latest Transfers</h2></div>
+				
+				<div id="transfers" class="transfers"></div>
+				
+				<p id='rp1'>
+					
+					<br />					
+				
+				
+				<p id='ap1'>
+					
+					<br/>
+				</p>
+				
+				<p id='urp2'>In 1999 Counter-Strike was released as a mod for Half-Life. As Counter-Strike progressed from a beta to a full release, it refined the classic gameplay that has come to define competitive shooters and produced a dedicated community that has followed the game for over a decade.
+					Through each of its iterations – 1.6, Source, and Global Offensive – Counter-Strike has been the de facto benchmark of a player’s skill. Teams from around the world are constantly demonstrating their ability and strategies in local, regional, and international tournaments.
+					Professional Counter-Strike players have become legendary in the international gaming community. Below, learn about some of these players and how they shaped the history of Counter-Strike.</p>
+				</div>
+				
+				<h2 id="urH21">Game Structure<br /></h2>
+				<p id='urp3'>
+					Global Offensive supports matchmaking and leaderboards for all online game modes, provided by Steam. The provided online service offers the ability to filter by game modes, maps and a built-in Steam friend system. 
+					Valve also employs Valve Anti-Cheat, which can automatically remove and ban players from the Valve online network. To match players of similar skill levels for an enjoyable experience, 
+					the game uses a heavily modified version of Elo rating system. The PC version of Global Offensive also supports private dedicated servers that the player may connect to through the community server menu in-game. 
+					These servers may be heavily modified and can be completely different from the base game.
+					<br/>
+				</p>	
+				<h2 id="urH22">Competition<br /></h2>
+				<p id='urp4'>
+					In Counter-Strike: Global Offensive, in addition to normal tournament circuits hosted by third-party organisations, 
+					Valve organizes or co-sponsors a series of events itself, referred to as 'majors'. These events are special in that they have large prize pools, 
+					which are crowdfunded by the Counter-Strike: Global Offensive community via in-game keys bought to open in-game cases, 
+					and special in-game cosmetics - usually in the form of stickers of the qualified teams logo, 
+					and signatures of qualified players that can be applied to guns or used to predict the results of the tournament 
+					- are introduced into the game, and are purchasable from Valve during the duration of the tournament.
+
+					As of October 27, 2015, Counter-Strike: Global Offensive tournaments have awarded over $7.5 million in prize money, 
+					with nearly $2 million won by Swedish players. The top 5 countries in earnings are, 
+					in order, Sweden, France, Poland, Denmark, and The United States.
+
+					Major tournaments are defined as those tournaments that are sponsored by Valve. 
+					Every Major so far has had a prize pool of $250,000. Each major has seen increased attendance, 
+					including over ten thousand viewers live in stadiums and millions watching on internet-based live streams, 
+					as well as increased money to the players through the purchase of stickers. 
+					Swedish team Fnatic bested the Ninjas in Pyjamas to win the DreamHack SteelSeries Counter-Strike: Global Offensive Championship in December 2013, 
+					the first Major tournament, with an entire tournament prize pool of $250,000. 
+					Virtus.pro won over Ninjas in Pyjamas in the EMS One Katowice 2014 championship, 
+					the second Major.Ninjas in Pyjamas won the ESL One Cologne tournament at Gamescom over Fnatic in 2014. 
+					Team LDLC.com won Dreamhack Winter 2014 over Ninjas in Pyjamas. 
+					On March 15, 2015, Fnatic won their second major at ESL Katowice 2015, beating Ninjas in Pyjamas once again. 
+					Fnatic won their third major on August 23, 2015 at ESL One Cologne 2015 beating Team EnVyUs 2-0 in a best of 3 series.
+				</p>
+				
+			</div>
+			
+			
+			<div class="tab-pane" id="players">
+				<br/>
+				<button type="button" id="newButton" class="newButton" >New Player</button><br/><br/>
+				
+				<div id="detailsModal"></div>
+				
+				<table id="playerList" class="display">
+					<thead>
+						<tr>
+							<th >Nation</th>
+							<th>Player name</th>
+							<th>Team</th>
+							<th>Last Update</th>
+							<th>Info</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+				</table>
+				
+				<div class="mainArea" id="mainArea">
+					<label>Name:</label>
+					<input id="nameList" name="nameList" type="text" disabled />
+					
+					<br /><label>Team:</label>
+					<input type="text" disabled id="teamList" name="teamList" />
+					
+					<br /><label>Country:</label>
+					<input type="text" disabled id="countryList" name="countryList"/>
+					
+					<br /><label>Resolution:</label>
+					<input type="text" disabled id="resolutionList" name="resolutionList"/>
+					
+					<br /><label>Monitor Hz:</label>
+					<input type="text" disabled id="monitorHzList" name="monitorHzList"/>
+					
+					<br /><label>Aspect Ratio:</label>
+					<input type="text" disabled id="aspectRatioList" name="aspectRatioList"/>
+					
+					<br /><label>Final Aspect Ratio:</label>
+					<input type="text" disabled id="finalAspectRatioList" name="finalAspectRatioList"/>
+					
+					<br /><label>Aspect Ratio Description:</label>
+					<input type="text" disabled id="aspectRatioDescriptionList" name="aspectRatioDescriptionList"/>
+					
+					<br /><label>Sensitivity:</label>
+					<input type="text" disabled id="sensitivityList" name="sensitivityList"/>
+					
+					<br /><label>Windows Sensitivity:</label>
+					<input type="text" disabled id="windowsSensitivityList" name="windowsSensitivityList"/>
+					
+					<br /><label>hz:</label>
+					<input type="text" disabled id="hzList" name="hzList"/>
+					
+					<br /><label>Zoom Sensitivity Ratio:</label>
+					<input type="text" disabled id="zoomSensitivityRatioList" name="zoomSensitivityRatioList"/>
+					
+					<br /><label>x Axis:</label>
+					<input type="text" disabled id="xAxisList" name="xAxisList"/>
+					
+					<br /><label>m Pitch:</label>
+					<input type="text" disabled id="mPitchList" name="mPitchList"/>
+					
+					<br /><label>m Yaw:</label>
+					<input type="text" disabled id="mYawList" name="mYawList"/>
+					
+					<br /><label>Raw Input:</label>
+					<input type="text" disabled id="mRawInputList" name="mRawInputList"/>
+					
+					<br /><label>rinputExe:</label>
+					<input type="text" disabled id="rinputExeList" name="rinputExeList"/>
+					
+					<br /><label>Mouse Acceleration:</label>
+					<input type="text" disabled id="mouseAccelerationList" name="mouseAccelerationList"/>
+					
+					<br /><label>CM 360:</label>
+					<input type="text" disabled id="cm360List" name="cm360List"/>
+					
+					<br /><label>Lightboost Blur:</label>
+					<input type="text" disabled id="lightboostBlurReductionList" name="lightboostBlurReductionList"/>
+					
+					<br /><label>Digital Vibrance:</label>
+					<input type="text" disabled id="digitalVibranceSaturationList" name="digitalVibranceSaturationList"/>
+				</div>
+				
+				<div class="rightArea2" id="rightArea2">
+					<br /><h2>Register Now!</h2><br />
+					
+					<p>Register an account on this website now to view the latest player transfers. 
+					Also edit your favourite players game settings where correctly sourced naturally. 
+					Add remove and edit players when you register an account today.
+					</p>
+				</div>
+				
+				<div class="rightArea" id="rightArea">
+					<img id="pic" src="#" alt="Player profile" height="300" width="225"/><br />
+					
+					<br /><label>Monitor:</label>
+					<div class="monitorList" id="monitorList"></div>
+					
+					<br /><label>Mouse:</label>
+					<div class="mouseList" id="mouseList"></div>
+					
+					<br /><label>Mousepad:</label>
+					<div class="mousepadList" id="mousepadList"></div>
+					
+					<br /><label>Notes:</label>
+					<input type="text" disabled id="notesList" name="notesList"/>
+					
+					<br /><label>Last Update:</label>
+					<input type="text" disabled id="lastUpdateList" name="lastUpdateList"/>
+				</div>
+				
+				<div id="detailsModal2" class="detailsModal2"></div>
+				
+				
+				<script type="text/template" id="Player-edit">
+					<form class="form-horizontal" id="form-horizontal" method="post">
+						<div class="form-group" id="form-group">
+							<br /><label class="col-sm-4 control-label"><strong>ID:</strong></label>
+							<input type="text" class="input-xlarge" name="id" id="eidText" value="<%=id%>" disabled/> 
+							<label for="tier" class="error"></label>
+						
+							<br /><label class="col-sm-4 control-label"><strong>Name:</strong></label>
+							<input type="text" class="input-xlarge" name="name" id="enameText" value="<%=name%>"/> 
+							<label for="tier" class="error"></label>
+						
+							<br /><label class="col-sm-4 control-label"><strong>Team:</strong></label>
+							<input type="text" class="input-xlarge" name="team" id="eteamText" value="<%=team%>"/> 
+							<label for="team" class="error"></label>
+
+							
+						
+							
+	
+							<br /><label class="col-sm-4 control-label"><strong>Resolution:</strong></label> 
+							<input type="text" class="input-xlarge" name="resolution" id="eresolutionText" value="<%=resolution%>"/> 
+							<label for="resolution" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Monitor Hz:</strong></label> 
+							<input type="text" class="input-xlarge" name="monitorHz" id="emonitorHzText" value="<%=monitorHz%>"/> 
+							<label for="monitorHz" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Aspect Ratio:</strong></label> 
+							<input type="text" class="input-xlarge" name="aspectRatio" id="easpectRatioText" value="<%=aspectRatio%>"/> 
+							<label for="aspectRatio" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Final A.R.:</strong></label> 
+							<input type="text" class="input-xlarge" name="finalAspectRatio" id="efinalAspectRatioText" value="<%=finalAspectRatio%>"/> 
+							<label for="finalAspectRatio" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>A.R. Description:</strong></label> 
+							<input type="text" class="input-xlarge" name="aspectRatioDescription" id="easpectRatioDescriptionText" value="<%=aspectRatioDescription%>"/> 
+							<label for="aspectRatioDescription" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Sensitivity:</strong></label> 
+							<input type="text" class="input-xlarge" name="sensitivity" id="esensitivityText" value="<%=sensitivity%>"/> 
+							<label for="sensitivity" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Win. Sensitivity:</strong></label> 
+							<input type="text" class="input-xlarge" name="windowsSensitivity" id="ewindowsSensitivityText" value="<%=windowsSensitivity%>"/> 
+							<label for="windowsSensitivity" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>hz:</strong></label> 
+							<input type="text" class="input-xlarge" name="hz" id="ehzText" value="<%=hz%>"/> 
+							<label for="hz" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Zoom Sens. Ratio:</strong></label> 
+							<input type="text" class="input-xlarge" name="zoomSensitivityRatio" id="ezoomSensitivityRatioText" value="<%=zoomSensitivityRatio%>"/> 
+							<label for="zoomSensitivityRatio" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>x Axis:</strong></label> 
+							<input type="text" class="input-xlarge" name="xAxis" id="exAxisText" value="<%=xAxis%>"/> 
+							<label for="xAxis" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>m Pitch:</strong></label> 
+							<input type="text" class="input-xlarge" name="mPitch" id="emPitchText" value="<%=mPitch%>"/> 
+							<label for="mPitch" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>m Yaw:</strong></label> 
+							<input type="text" class="input-xlarge" name="mYaw" id="emYawText" value="<%=mYaw%>"/> 
+							<label for="mYaw" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>m Raw Input:</strong></label> 
+							<input type="text" class="input-xlarge" name="mRawInput" id="emRawInputText" value="<%=mRawInput%>"/> 
+							<label for="mRawInput" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Mouse Acceleration:</strong></label> 
+							<input type="text" class="input-xlarge" name="mouseAcceleration" id="emouseAccelerationText" value="<%=mouseAcceleration%>"/> 
+							<label for="mouseAcceleration" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label"><strong>Mousepad:</strong></label> 
+							<input type="text" class="input-xlarge" name="mousepad" id="emousepadText" value="<%=mousepad%>" /> 
+							<label for="mousepad" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label">CM 360:</label> 
+							<input type="text" class="input-xlarge" name="cm360" id="ecm360Text" value="<%=cm360%>"/> 
+							<label for="cm360" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label"><strong>Blur Red'n.:</strong></label> 
+							<input type="text" class="input-xlarge" name="lightboostBlurReduction" id="elightboostBlurReductionText" value="<%=lightboostBlurReduction%>"/> 
+							<label for="lightboostBlurReduction" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label"><strong>Dig. Vibrance:</strong></label> 
+							<input type="text" class="input-xlarge" name="digitalVibranceSaturation" id="edigitalVibranceSaturationText" value="<%=digitalVibranceSaturation%>"/> 
+							<label for="digitalVibranceSaturation" class="error"></label>
+						</div>
+
+						<form class="form-horizontal2" id="form-horizontal2" method="post">
+						<div class="form-group2" id="form-group2">
+							<img id="epicture" height="300" width="225" src="images/<%=id%>.jpg"/>
+							
+							<br /><label class="col-sm-4 control-label"><strong>Monitor:</strong></label>
+							<input type="text" class="input-xlarge" name="monitor" id="emonitorText" value="<%=monitor%>"/> 
+							<label for="monitor" class="error"></label>
+	
+							<br /><label class="col-sm-4 control-label"><strong>Mouse:</strong></label>
+							<input type="text" class="input-xlarge" name="mouse" id="emouseText" value="<%=mouse%>"/> 
+							<label for="mouse" class="error"></label>
+	
+							
+
+							<br /><label class="col-sm-4 control-label"><strong>Notes:</strong></label> 
+							<input type="text" class="input-xlarge" name="notes" id="enotesText" value="<%=notes%>"/> 
+							<label for="notes" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label"><strong>Last Update:</strong></label> 
+							<input type="text" disabled class="input-xlarge" name="lastUpdate" id="elastUpdateText" value="<%=lastUpdate%>"/> 
+							<label for="lastUpdate" class="error"></label>
+
+							<br /><label class="col-sm-4 control-label"><strong>Country:</strong></label>
+							<input type="text" disabled class="input-xlarge" name="countryInput" id="countryInput" value="<%=country%>"/>
+							<br /><select id="ecountryText" value="<%=country%>">
+		  						<option value="AD">Andorra, Principality Of</option>
+<option value="AE">United Arab Emirates</option>
+<option value="AF">Afghanistan, Islamic State Of</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AI">Anguilla</option>
+<option value="AL">Albania</option>
+<option value="AM">Armenia</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="AO">Angola</option>
+<option value="AQ">Antarctica</option>
+<option value="AR">Argentina</option>
+<option value="AS">American Samoa</option>
+<option value="AT">Austria</option>
+<option value="AU">Australia</option>
+<option value="AW">Aruba</option>
+<option value="AZ">Azerbaidjan</option>
+<option value="BA">Bosnia-Herzegovina</option>
+<option value="BB">Barbados</option>
+<option value="BD">Bangladesh</option>
+<option value="BE">Belgium</option>
+<option value="BF">Burkina Faso</option>
+<option value="BG">Bulgaria</option>
+<option value="BH">Bahrain</option>
+<option value="BI">Burundi</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BO">Bolivia</option>
+<option value="BR">Brazil</option>
+<option value="BS">Bahamas</option>
+<option value="BT">Bhutan</option>
+<option value="BV">Bouvet Island</option>
+<option value="BW">Botswana</option>
+<option value="BY">Belarus</option>
+<option value="BZ">Belize</option>
+<option value="CA">Canada</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="CD">Congo, The Democratic Republic Of The</option>
+<option value="CG">Congo</option>
+<option value="CH">Switzerland</option>
+<option value="CI">Ivory Coast (Cote D'Ivoire)</option>
+<option value="CK">Cook Islands</option>
+<option value="CL">Chile</option>
+<option value="CM">Cameroon</option>
+<option value="CN">China</option>
+<option value="CO">Colombia</option>
+<option value="CR">Costa Rica</option>
+<option value="CS">Former Czechoslovakia</option>
+<option value="CU">Cuba</option>
+<option value="CV">Cape Verde</option>
+<option value="CX">Christmas Island</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DE">Germany</option>
+<option value="DJ">Djibouti</option>
+<option value="DK">Denmark</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="DZ">Algeria</option>
+<option value="EC">Ecuador</option>
+<option value="EE">Estonia</option>
+<option value="EG">Egypt</option>
+<option value="EH">Western Sahara</option>
+<option value="ER">Eritrea</option>
+<option value="ES">Spain</option>
+<option value="ET">Ethiopia</option>
+<option value="FI">Finland</option>
+<option value="FJ">Fiji</option>
+<option value="FK">Falkland Islands</option>
+<option value="FM">Micronesia</option>
+<option value="FO">Faroe Islands</option>
+<option value="FR">France</option>
+<option value="FX">France (European Territory)</option>
+<option value="GA">Gabon</option>
+<option value="UK">Great Britain</option>
+<option value="GD">Grenada</option>
+<option value="GE">Georgia</option>
+<option value="GF">French Guyana</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GL">Greenland</option>
+<option value="GM">Gambia</option>
+<option value="GN">Guinea</option>
+<option value="GP">Guadeloupe (French)</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="GR">Greece</option>
+<option value="GS">S. Georgia & S. Sandwich Isls.</option>
+<option value="GT">Guatemala</option>
+<option value="GU">Guam (USA)</option>
+<option value="GW">Guinea Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HK">Hong Kong</option>
+<option value="HM">Heard And McDonald Islands</option>
+<option value="HN">Honduras</option>
+<option value="HR">Croatia</option>
+<option value="HT">Haiti</option>
+<option value="HU">Hungary</option>
+<option value="ID">Indonesia</option>
+<option value="IE">Ireland</option>
+<option value="IL">Israel</option>
+<option value="IN">India</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="IQ">Iraq</option>
+<option value="IR">Iran</option>
+<option value="IS">Iceland</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JO">Jordan</option>
+<option value="JP">Japan</option>
+<option value="KE">Kenya</option>
+<option value="KG">Kyrgyz Republic (Kyrgyzstan)</option>
+<option value="KH">Cambodia, Kingdom Of</option>
+<option value="KI">Kiribati</option>
+<option value="KM">Comoros</option>
+<option value="KN">Saint Kitts & Nevis Anguilla</option>
+<option value="KP">North Korea</option>
+<option value="KR">South Korea</option>
+<option value="KW">Kuwait</option>
+<option value="KY">Cayman Islands</option>
+<option value="KZ">Kazakhstan</option>
+<option value="LA">Laos</option>
+<option value="LB">Lebanon</option>
+<option value="LC">Saint Lucia</option>
+<option value="LI">Liechtenstein</option>
+<option value="LK">Sri Lanka</option>
+<option value="LR">Liberia</option>
+<option value="LS">Lesotho</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="LV">Latvia</option>
+<option value="LY">Libya</option>
+<option value="MA">Morocco</option>
+<option value="MC">Monaco</option>
+<option value="MD">Moldavia</option>
+<option value="MG">Madagascar</option>
+<option value="MH">Marshall Islands</option>
+<option value="MK">Macedonia</option>
+<option value="ML">Mali</option>
+<option value="MM">Myanmar</option>
+<option value="MN">Mongolia</option>
+<option value="M0">Macau</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="MQ">Martinique (French)</option>
+<option value="MR">Mauritania</option>
+<option value="MS">Montserrat</option>
+<option value="MT">Malta</option>
+<option value="MU">Mauritius</option>
+<option value="MV">Maldives</option>
+<option value="MW">Malawi</option>
+<option value="MX">Mexico</option>
+<option value="MY">Malaysia</option>
+<option value="MZ">Mozambique</option>
+<option value="NA">Namibia</option>
+<option value="NC">New Caledonia (French)</option>
+<option value="NE">Niger</option>
+<option value="NF">Norfolk Island</option>
+<option value="NG">Nigeria</option>
+<option value="NI">Nicaragua</option>
+<option value="NL">Netherlands</option>
+<option value="NO">Norway</option>
+<option value="NP">Nepal</option>
+<option value="NR">Nauru</option>
+<option value="NT">Neutral Zone</option>
+<option value="NU">Niue</option>
+<option value="NZ">New Zealand</option>
+<option value="OM">Oman</option>
+<option value="PA">Panama</option>
+<option value="PE">Peru</option>
+<option value="PF">Polynesia (French)</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PH">Philippines</option>
+<option value="PK">Pakistan</option>
+<option value="PL">Poland</option>
+<option value="PM">Saint Pierre And Miquelon</option>
+<option value="PN">Pitcairn Island</option>
+<option value="PR">Puerto Rico</option>
+<option value="PT">Portugal</option>
+<option value="PW">Palau</option>
+<option value="PY">Paraguay</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion (French)</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SC">Seychelles</option>
+<option value="SU">Sudan</option>
+<option value="SE">Sweden</option>
+<option value="SG">Singapore</option>
+<option value="SH">Saint Helena</option>
+<option value="SI">Slovenia</option>
+<option value="SJ">Svalbard And Jan Mayen Islands</option>
+<option value="SK">Slovak Republic</option>
+<option value="SL">Sierra Leone</option>
+<option value="SM">San Marino</option>
+<option value="SN">Senegal</option>
+<option value="SO">Somalia</option>
+<option value="SR">Suriname</option>
+<option value="ST">Saint Tome (Sao Tome) And Principe</option>
+<option value="SU">Soviet Union</option>
+<option value="SV">El Salvador</option>
+<option value="SY">Syria</option>
+<option value="SZ">Swaziland</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TD">Chad</option>
+<option value="TF">French Southern Territories</option>
+<option value="TG">Togo</option>
+<option value="TH">Thailand</option>
+<option value="TJ">Tadjikistan</option>
+<option value="TK">Tokelau</option>
+<option value="TM">Turkmenistan</option>
+<option value="TN">Tunisia</option>
+<option value="TO">Tonga</option>
+<option value="TP">East Timor</option>
+<option value="TR">Turkey</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TV">Tuvalu</option>
+<option value="TW">Taiwan</option>
+<option value="TZ">Tanzania</option>
+<option value="UA">Ukraine</option>
+<option value="UG">Uganda</option>
+<option value="UK">United Kingdom</option>
+<option value="UM">USA Minor Outlying Islands</option>
+<option value="US">United States</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="VC">Saint Vincent & Grenadines</option>
+<option value="VE">Venezuela</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (USA)</option>
+<option value="VN">Vietnam</option>
+<option value="VU">Vanuatu</option>
+<option value="WF">Wallis And Futuna Islands</option>
+<option value="WS">Samoa</option>
+<option value="YE">Yemen</option>
+<option value="YT">Mayotte</option>
+<option value="YU">Yugoslavia</option>
+<option value="XA">South Africa</option>
+<option value="ZM">Zambia</option>
+<option value="ZR">Zaire</option>
+<option value="ZW">Zimbabwe</option>
+							</select>
+							<label for="country" class="error"></label>
+						</div>
+						
+				<button type="button" class="saveButton" id="saveButton">Update Player</button>
+				<button type="button" class="addButton" id="addButton">Add Player</button>
+</script>
+
+				<div id="testDiv" class="testDiv">
+					<form action="rest/files/upload" method="post" enctype="multipart/form-data">
+						<p >Select a file (Please use imageid.jpg as file format): <input type="file" name="file" size="50" /></p>
+						<input type="submit" id="uploadButton" class="uploadButton" value="Upload It" />
+					</form>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="users">
+				<h2>Administrators and Users</h2>
+				<br/>
+				<button type="button" id="newUserButton" class="newButton" >New user</button><br/><br/>
+				
+				<div id="userDetailsModal"></div>
+				<div id="userDetailsModal2"></div>
+				
+				<ul id="userList"></ul>
+				
+				<div class="mainArea2" id="mainArea2">
+		<label>Id:</label>
+		<input id="userId" name="userId" type="text" disabled />
+		
+		<br /><label>Email:</label>
+		<input type="text" id="userEmail" name="userEmail" />
+		
+		<br /><label>Password:</label>
+		<input type="password" id="userPassword" name="userPassword"/>
+		
+		<br /><label>Credentials:</label>
+		<select id="userCredentialsDropdown">
+		  <option value="dropdownAdmin">Admin</option>
+		  <option value="dropdownRegisteredUser">Registered User</option>
+		</select>
+		
+		<button id="btnSave">Save</button>
+		<button id="btnDelete">Delete</button>
+	</div>
+			</div>
+			
+			<div class="tab-pane" id="contact">
+				<div class="contactPage" id="contactPage">
+					<p>
+						<img src='images/mail.png' alt="email icon"><br />
+						Please email with any queries to: <a href="mailto:neildoherty@live.ie">neildoherty@live.ie</a>
+					</p>
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

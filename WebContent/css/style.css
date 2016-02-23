@@ -1,0 +1,148 @@
+header {
+	margin: 0.5cm 1cm 0.5cm 1cm;
+	
+	text-align:center;	
+	text-shadow: 2px 2px #A3A3A3;
+	 
+}
+
+.tab-content p{
+	color: #999b9d;
+}
+
+#players th, label{
+	color: #999b9d;
+}
+
+.tab-content h1{
+	color: #97b7d1;
+}
+
+h2{
+	color: #97b7d1;
+	font-size: 32px;
+}
+
+.backgroundColor {
+	background-color:#131820;
+	height: 1175px;
+	width:98%;
+	position:absolute;
+	top:35%;
+	left: 1%;
+}
+
+body {
+	background-image: url("../images/imageTop.jpg");
+	background-repeat:no-repeat;
+	background-position:50% 0px;
+	background-color: #010713;
+}
+
+#head, #foot {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#coffeeList img {
+	width: 30px;
+	height: 30px;
+}
+
+#gallery img {
+	margin-left:200px;
+	height: 400px;
+	width:400px;
+}
+
+#gallery h3 {
+	margin-left:400px;
+	color: black;
+}
+
+#window {
+	text-align:center;
+}
+
+#contactPage {
+	margin-left: 2cm;
+}
+
+#contact {
+	text-align: center;
+}
+
+.page-header {
+	font-family: Rockwell, 'Courier Bold', Courier, Georgia, Times, 'Times New Roman';
+	font-size: 64px;
+	border-bottom:none;
+}
+
+.urContainer1 {
+	background-color: #FFF;
+}
+
+.tab-content {
+	margin: 0.5cm 1cm 0.5cm 1cm;
+}
+
+.dropdown-menu {
+	margin: auto;
+}
+
+.mainArea {
+	position: absolute;
+	top: 355px;
+	margin-left: 42%;
+	width:450px;
+}
+
+.rightArea {
+	position: absolute;
+	top: 355px;
+	margin-left: 69%;
+	width:375px;
+}
+
+.rightArea2 {
+	position: absolute;
+	top: 275px;
+	margin-left: 50%;
+	width:375px;
+}
+
+.testDiv {
+	margin-top: 20%;
+	margin-left: 75%;
+}
+
+.form-horizontal {
+	position: absolute;
+	top: 355px;
+	margin-left: 42%;
+	width:500px;
+}
+
+.form-group2 {
+	position: absolute;
+	top: 0px;
+	margin-left: 69%;
+	width:400px;
+}
+
+.col-sm-4 control-label {
+	display: inline-block;
+    float: left;
+    width: 180px;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    width: 180px;  
+}
+
+#playerList_wrapper {
+    margin-left: 0%;
+    width: 40%;
+}

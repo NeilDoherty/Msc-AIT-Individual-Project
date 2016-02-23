@@ -1,0 +1,11 @@
+To run project follow these steps (deployed under the eclipse luna environment with JBoss 7.1 and MYSQL5.5)
+
+1. 
+
+1. Import as Dynamic web project into eclipse
+
+2. open db_execution.sql in mysql and execute to populate database (the deafult schema name in this file is individual_project)
+
+3. run project on server
+
+4. open http://localhost:8080/individual_project/ in the latest version of Google Chrome for best viewing conditions
